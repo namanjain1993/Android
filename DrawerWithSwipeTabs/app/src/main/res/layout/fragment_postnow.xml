@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/email_address"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:background="@color/gray"
+        android:gravity="start"
+        android:hint="@string/post_hint"
+        android:inputType="textCapSentences|textMultiLine"
+        android:padding="10dp"/>
+
+    <View style="@style/Divider"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/slate_grey">
+
+        <TextView
+            android:id="@+id/add_photo_video_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="left"
+            android:textAlignment="gravity"
+            android:text="Add Photo/Video"
+            android:textColor="@android:color/white"
+            android:textSize="14dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/left_charecter_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:textAlignment="gravity"
+            android:text="160 Charecter Left"
+            android:textColor="@android:color/white"
+            android:textSize="14dp">
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
