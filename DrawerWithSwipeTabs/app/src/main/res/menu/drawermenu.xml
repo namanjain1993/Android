@@ -2,41 +2,41 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:title="Facebook"
-          android:id="@+id/nav_item_facebook"
-          android:icon="@drawable/inbox"/>
+    <group
+        android:id="@+id/group_home"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_home"
+            android:icon="@drawable/house_outline"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_item_accounts"
+            android:icon="@drawable/users"
+            android:title="Accounts"/>
+        <item
+            android:id="@+id/nav_item_anlytics"
+            android:icon="@drawable/increasing_stocks_graphic"
+            android:title="Analytics"/>
+        <item
+            android:id="@+id/nav_item_timezone"
+            android:icon="@drawable/clock"
+            android:title="Time Zone"/>
+    </group>
 
-    <item android:title="Twitter"
-          android:id="@+id/nav_item_twitter"
-          android:icon="@drawable/sent"/>
-
-    <item android:title="Instagram"
-          android:id="@+id/nav_item_instagram"
-          android:icon="@drawable/draft"/>
-
-    <item android:title="Linkedin"
-          android:id="@+id/nav_item_linkedin"
-          android:icon="@drawable/draft"/>
-
-
-    <!--<item android:title="Others">
-        <menu>
-            <item
-                android:title="Spam"
-                android:icon="@drawable/spam"/>
-            <item
-                android:title="Bin"
-                android:icon="@drawable/bin"/>
-        </menu>
-    </item>
-
-    <group android:id="@+id/group_settings_id">
-
-        <item android:title="Settings"
-              android:icon="@drawable/settings"/>
-        <item android:title="Help"
-             android:icon="@drawable/help"/>
-    </group>-->
-
+    <group android:id="@+id/group_settings"
+           android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_settings"
+            android:icon="@drawable/settings"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/nav_item_helpfeedback"
+            android:icon="@drawable/information"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/nav_item_signout"
+            android:icon="@drawable/log_out"
+            android:title="Sign Out"/>
+    </group>
 
 </menu>

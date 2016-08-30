@@ -2,56 +2,98 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
-
+              android:orientation="vertical"
+              android:weightSum="9.005">
 
     <EditText
-        android:id="@+id/email_address"
-        android:layout_width="fill_parent"
-        android:layout_height="400dp"
+        android:id="@+id/editText_post"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
         android:background="@color/gray"
         android:gravity="start"
         android:hint="@string/post_hint"
         android:inputType="textCapSentences|textMultiLine"
         android:padding="10dp"/>
 
-    <View style="@style/Divider"/>
+    <View
+        style="@style/Divider"
+        android:layout_weight=".005"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/slate_grey">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="4"
+        android:weightSum="4">
 
-        <TextView
-            android:id="@+id/add_photo_video_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:layout_alignParentLeft="true"
-            android:layout_gravity="left"
-            android:textAlignment="gravity"
-            android:text="Add Photo/Video"
-            android:textColor="@android:color/white"
-            android:textSize="14dp">
-        </TextView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/gray">
 
-        <TextView
-            android:id="@+id/left_charecter_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="right"
-            android:textAlignment="gravity"
-            android:text="160 Charecter Left"
-            android:textColor="@android:color/white"
-            android:textSize="14dp">
-        </TextView>
+            <TextView
+                android:id="@+id/add_photo_video_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left|center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Add Photo/Video"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white">
+            </TextView>
 
+            <TextView
+                android:id="@+id/left_charecter_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="160 Charecter Left"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white">
+            </TextView>
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/slate_grey"
+            android:scrollbars="none">
+
+            <include
+                layout="@layout/sliding_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/postnow_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/grey_green"
+            android:text="Post Now"/>
+
+        <Button
+            android:id="@+id/queue_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/slate_grey"
+            android:text="Add to Queue"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

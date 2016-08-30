@@ -14,4 +14,10 @@
 
     <string name="post_hint">What you want to share</string>
 
+    <string name="next">Next</string>
+
+    <string name="skip">skip</string>
+
+    <string name="start">Start</string>
+
 </resources>
