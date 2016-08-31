@@ -15,7 +15,6 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:focusableInTouchMode="true"
         android:scaleType="fitCenter"
         android:src="@drawable/all_dark"/>
 
@@ -28,7 +27,6 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:focusableInTouchMode="true"
         android:scaleType="fitCenter"
         android:src="@drawable/facebook_dark"/>
 
@@ -54,7 +52,6 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:focusableInTouchMode="true"
         android:scaleType="fitCenter"
         android:src="@drawable/linkedin_dark"/>
 
@@ -67,7 +64,6 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:focusableInTouchMode="true"
         android:scaleType="fitCenter"
         android:src="@drawable/twitter_dark"/>
 
