@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:weightSum="9.005">
+              android:weightSum="8.005">
 
     <EditText
         android:id="@+id/editText_post"
@@ -24,8 +24,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_weight="4"
+        android:orientation="vertical"
         android:weightSum="4">
 
         <RelativeLayout
@@ -78,42 +78,13 @@
 
         </HorizontalScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            android:weightSum="2.005">
-
-            <Button
-                android:id="@+id/previewnow_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/grey_green"
-                android:text="Preview Now"/>
-
-            <View
-                style="@style/Divider_Horizontal"
-                android:layout_weight=".005"/>
-
-            <Button
-                android:id="@+id/postnow_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/grey_green"
-                android:text="Post Now"/>
-
-        </LinearLayout>
-
         <Button
-            android:id="@+id/queue_btn"
+            android:id="@+id/preview_postnow_btn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/slate_grey"
-            android:text="Add to Queue"/>
+            android:background="@color/grey_green"
+            android:text="Post Now"/>
 
     </LinearLayout>
 

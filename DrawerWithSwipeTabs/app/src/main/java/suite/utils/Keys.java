@@ -17,6 +17,5 @@ public class Keys {
 
     public static boolean IS_FIRST_TIME_WRITING_POST = true;
 
-    public static LastLongPressed LAST_LONG_PRESSED = LastLongPressed.UNIVERSAL;
 
 }

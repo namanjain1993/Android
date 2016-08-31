@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.androidbelieve.drawerwithswipetabs.R;
 
-import suite.utils.PreferenceManager;
+import suite.utils.ApplicationPreferenceManager;
 
 /**
  * Created by Naman on 26/08/16.
@@ -33,14 +33,14 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
-    private PreferenceManager prefManager;
+    private ApplicationPreferenceManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new PreferenceManager(this);
+        prefManager = new ApplicationPreferenceManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
