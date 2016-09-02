@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/slidingbtn_layout"
+              android:id="@+id/slidingbtn_glow_layout"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_weight="1"
@@ -8,7 +8,7 @@
               android:orientation="horizontal">
 
     <ImageButton
-        android:id="@+id/universal_btn"
+        android:id="@+id/fb_glow_btn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -17,22 +17,10 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/all_glow"/>
+        android:src="@drawable/facebook_glow"/>
 
     <ImageButton
-        android:id="@+id/fb_btn"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginLeft="15dp"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/facebook_dark"/>
-
-    <ImageButton
-        android:id="@+id/instagram_btn"
+        android:id="@+id/instagram_glow_btn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -42,10 +30,10 @@
         android:background="@android:color/transparent"
         android:focusableInTouchMode="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/instagram_dark"/>
+        android:src="@drawable/instagram_glow"/>
 
     <ImageButton
-        android:id="@+id/linkedin_btn"
+        android:id="@+id/linkedin_glow_btn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -54,10 +42,10 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/linkedin_dark"/>
+        android:src="@drawable/linkedin_glow"/>
 
     <ImageButton
-        android:id="@+id/twitter_btn"
+        android:id="@+id/twitter_glow_btn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -66,6 +54,6 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/twitter_dark"/>
+        android:src="@drawable/twitter_glow"/>
 
 </LinearLayout>

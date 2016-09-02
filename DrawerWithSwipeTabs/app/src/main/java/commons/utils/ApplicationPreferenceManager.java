@@ -1,4 +1,4 @@
-package suite.utils;
+package commons.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,6 +18,7 @@ public class ApplicationPreferenceManager {
     // Shared preferences file name
     private static final String PREF_NAME = "SUITE_WELCOME";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+    private static final String IS_USER_LOGGED_IN = "IsUserLoggedIn";
 
     public ApplicationPreferenceManager(Context context) {
 
@@ -32,7 +33,18 @@ public class ApplicationPreferenceManager {
     }
 
     public boolean isFirstTimeLaunch() {
-        return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true);
+        return pref.getBoolean(IS_FIRST_TIME_LAUNCH, false);
+    }
+
+
+    public boolean isUserLoggedIn() {
+        return pref.getBoolean(IS_USER_LOGGED_IN, false);
+    }
+
+
+    public void setUserLoggedIn(boolean isUserLoggedIn) {
+        editor.putBoolean(IS_USER_LOGGED_IN, isUserLoggedIn);
+        editor.commit();
     }
 
 }

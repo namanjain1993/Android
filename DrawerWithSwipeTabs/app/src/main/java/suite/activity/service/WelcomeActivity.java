@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +22,8 @@ import android.widget.TextView;
 
 import com.androidbelieve.drawerwithswipetabs.R;
 
-import suite.utils.ApplicationPreferenceManager;
+import commons.utils.ApplicationPreferenceManager;
+import login.fragment.LoginFragment;
 
 /**
  * Created by Naman on 26/08/16.
@@ -38,20 +41,21 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new ApplicationPreferenceManager(this);
-        if (!prefManager.isFirstTimeLaunch()) {
+        if (prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
-            finish();
+        } else if (!prefManager.isUserLoggedIn()) {
+            launchLoginScreen();
         }
+
 
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
-
-        setContentView(R.layout.activity_welcome);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
@@ -123,6 +127,12 @@ public class WelcomeActivity extends AppCompatActivity {
         prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
+    }
+
+    private void launchLoginScreen() {
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.addToBackStack(null).replace(R.id.welcome_container, new LoginFragment()).commit();
     }
 
     //  viewpager change listener
@@ -202,5 +212,7 @@ public class WelcomeActivity extends AppCompatActivity {
             container.removeView(view);
         }
     }
+
+
 
 }

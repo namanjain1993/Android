@@ -4,11 +4,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
 import com.androidbelieve.drawerwithswipetabs.R;
 
-import suite.beans.GlobalVariables;
+import commons.utils.GlobalVariables;
 import suite.listeners.PreviewNowFragmentListener;
 
 /**
@@ -16,9 +15,8 @@ import suite.listeners.PreviewNowFragmentListener;
  */
 public class PreviewNowFragmentHelper {
 
-    private View rootView;
-    private LinearLayout slidingBtnLayout;
-    private GlobalVariables globalVariables;
+    private static View rootView;
+    private static GlobalVariables globalVariables;
 
     private static EditText editText;
     private static ImageButton universalImageButton;
@@ -104,7 +102,6 @@ public class PreviewNowFragmentHelper {
 
     private void initializeElements() {
 
-        slidingBtnLayout = (LinearLayout) rootView.findViewById(R.id.slidingbtn_layout);
         universalImageButton = (ImageButton) rootView.findViewById(R.id.universal_btn);
         facebookImageButton = (ImageButton) rootView.findViewById(R.id.fb_btn);
         instagramImageButton = (ImageButton) rootView.findViewById(R.id.instagram_btn);

@@ -1,5 +1,9 @@
 package suite.fragments;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,8 +17,12 @@ import android.widget.TextView;
 
 import com.androidbelieve.drawerwithswipetabs.R;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import suite.fragments.helper.PostNowFragmentHelper;
-import suite.utils.ApplicationPreferenceManager;
+import commons.utils.ApplicationPreferenceManager;
+import commons.constants.Constants;
 
 
 /**
@@ -51,7 +59,7 @@ public class PostNowFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_postnow, container, false);
 
-        PostNowFragmentHelper fragmentHelper = new PostNowFragmentHelper(rootView);
+        PostNowFragmentHelper fragmentHelper = new PostNowFragmentHelper(rootView, this);
         rootView = fragmentHelper.setListners(rootView);
 
         if (!fragmentReloaded) {
@@ -69,5 +77,33 @@ public class PostNowFragment extends Fragment {
 
 
         return rootView;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Constants.PICK_MEDIA_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+
+            try {
+
+                InputStream inputStream = getContext().getContentResolver().openInputStream(uri);
+                Drawable image = Drawable.createFromStream(inputStream, uri.toString());
+
+                EditText editText = (EditText) getView().findViewById(R.id.editText_post);
+
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    editText.setBackgroundDrawable(image);
+                } else {
+                    editText.setBackground(image);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -1,6 +1,9 @@
-package suite.beans;
+package commons.utils;
 
 import android.app.Application;
+
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 /**
  * Created by Naman on 31/08/16.
@@ -8,16 +11,70 @@ import android.app.Application;
 public class GlobalVariables extends Application {
 
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
+    }
+
+
     private boolean isFirstTimeWritingPost = true;
     private boolean isFacebookButtonClicked;
     private boolean isInstagramButtonClicked;
     private boolean isLinkedinButtonClicked;
     private boolean isTwitterButtonClicked;
+    private boolean isFacebookButtonPreviewClicked;
+    private boolean isInstagramButtonPreviewClicked;
+    private boolean isLinkedinButtonPreviewClicked;
+    private boolean isTwitterButtonPreviewClicked;
     private String facebookEditText;
     private String instagramEditText;
     private String linkedinEditText;
     private String twitterEditText;
     private String universalEditText;
+    private String currentEditingButton;
+
+
+    public boolean isFacebookButtonPreviewClicked() {
+        return isFacebookButtonPreviewClicked;
+    }
+
+    public void setFacebookButtonPreviewClicked(boolean facebookButtonPreviewClicked) {
+        isFacebookButtonPreviewClicked = facebookButtonPreviewClicked;
+    }
+
+    public boolean isInstagramButtonPreviewClicked() {
+        return isInstagramButtonPreviewClicked;
+    }
+
+    public void setInstagramButtonPreviewClicked(boolean instagramButtonPreviewClicked) {
+        isInstagramButtonPreviewClicked = instagramButtonPreviewClicked;
+    }
+
+    public boolean isLinkedinButtonPreviewClicked() {
+        return isLinkedinButtonPreviewClicked;
+    }
+
+    public void setLinkedinButtonPreviewClicked(boolean linkedinButtonPreviewClicked) {
+        isLinkedinButtonPreviewClicked = linkedinButtonPreviewClicked;
+    }
+
+    public boolean isTwitterButtonPreviewClicked() {
+        return isTwitterButtonPreviewClicked;
+    }
+
+    public void setTwitterButtonPreviewClicked(boolean twitterButtonPreviewClicked) {
+        isTwitterButtonPreviewClicked = twitterButtonPreviewClicked;
+    }
+
+    public String getCurrentEditingButton() {
+        return currentEditingButton;
+    }
+
+    public void setCurrentEditingButton(String currentEditingButton) {
+        this.currentEditingButton = currentEditingButton;
+    }
 
     public String getUniversalEditText() {
         return universalEditText;
@@ -99,4 +156,6 @@ public class GlobalVariables extends Application {
     public void setTwitterButtonClicked(boolean twitterButtonClicked) {
         isTwitterButtonClicked = twitterButtonClicked;
     }
+
+
 }

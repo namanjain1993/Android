@@ -1,14 +1,16 @@
 package suite.fragments.helper;
 
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidbelieve.drawerwithswipetabs.R;
 
-import suite.beans.GlobalVariables;
+import commons.utils.GlobalVariables;
 import suite.listeners.PostNowFragmentListners;
 
 /**
@@ -26,13 +28,15 @@ public class PostNowFragmentHelper {
     private static ImageButton linkedinImageButton;
     private static ImageButton twitterImageButton;
     private static TextView universalleftCharecterTextView;
+    private static LinearLayout addMediaLayoutButton;
     private static boolean isAleardyInitialized;
+    private static Fragment fragment;
 
-    public PostNowFragmentHelper(View rootView) {
+    public PostNowFragmentHelper(View rootView, Fragment fragment) {
         if (!isAleardyInitialized) {
             isAleardyInitialized = true;
             this.rootView = rootView;
-            this.globalVariables = (GlobalVariables) rootView.getContext().getApplicationContext();
+            this.fragment = fragment;
             initializeElements();
         }
     }
@@ -40,28 +44,31 @@ public class PostNowFragmentHelper {
 
     public View setListners(View rootView) {
 
-        universalImageButton.setOnClickListener(new PostNowFragmentListners(universalImageButton));
-        universalImageButton.setOnFocusChangeListener(new PostNowFragmentListners(universalImageButton));
+        universalImageButton.setOnClickListener(new PostNowFragmentListners(universalImageButton, fragment));
+        universalImageButton.setOnFocusChangeListener(new PostNowFragmentListners(universalImageButton, fragment));
 
 
-        facebookImageButton.setOnFocusChangeListener(new PostNowFragmentListners(facebookImageButton));
-        facebookImageButton.setOnClickListener(new PostNowFragmentListners(facebookImageButton));
+        facebookImageButton.setOnFocusChangeListener(new PostNowFragmentListners(facebookImageButton, fragment));
+        facebookImageButton.setOnClickListener(new PostNowFragmentListners(facebookImageButton, fragment));
 
-        linkedinImageButton.setOnFocusChangeListener(new PostNowFragmentListners(linkedinImageButton));
-        linkedinImageButton.setOnClickListener(new PostNowFragmentListners(linkedinImageButton));
+        linkedinImageButton.setOnFocusChangeListener(new PostNowFragmentListners(linkedinImageButton, fragment));
+        linkedinImageButton.setOnClickListener(new PostNowFragmentListners(linkedinImageButton, fragment));
 
-        instagramImageButton.setOnFocusChangeListener(new PostNowFragmentListners(instagramImageButton));
-        instagramImageButton.setOnClickListener(new PostNowFragmentListners(instagramImageButton));
+        instagramImageButton.setOnFocusChangeListener(new PostNowFragmentListners(instagramImageButton, fragment));
+        instagramImageButton.setOnClickListener(new PostNowFragmentListners(instagramImageButton, fragment));
 
-        twitterImageButton.setOnFocusChangeListener(new PostNowFragmentListners(twitterImageButton));
-        twitterImageButton.setOnClickListener(new PostNowFragmentListners(twitterImageButton));
+        twitterImageButton.setOnFocusChangeListener(new PostNowFragmentListners(twitterImageButton, fragment));
+        twitterImageButton.setOnClickListener(new PostNowFragmentListners(twitterImageButton, fragment));
 
 
-        previewNowButton.setOnFocusChangeListener(new PostNowFragmentListners(previewNowButton));
-        previewNowButton.setOnClickListener(new PostNowFragmentListners(previewNowButton));
+        previewNowButton.setOnFocusChangeListener(new PostNowFragmentListners(previewNowButton, fragment));
+        previewNowButton.setOnClickListener(new PostNowFragmentListners(previewNowButton, fragment));
 
         universalEditText = (EditText) rootView.findViewById(R.id.editText_post);
-        universalEditText.addTextChangedListener(new PostNowFragmentListners(universalEditText));
+        universalEditText.addTextChangedListener(new PostNowFragmentListners(universalEditText, fragment));
+
+        addMediaLayoutButton.setOnFocusChangeListener(new PostNowFragmentListners(addMediaLayoutButton, fragment));
+        addMediaLayoutButton.setOnClickListener(new PostNowFragmentListners(addMediaLayoutButton, fragment));
 
         return rootView;
 
@@ -92,6 +99,7 @@ public class PostNowFragmentHelper {
     }
 
     private void initializeElements() {
+        globalVariables = (GlobalVariables) rootView.getContext().getApplicationContext();
         universalEditText = (EditText) rootView.findViewById(R.id.editText_post);
         universalImageButton = (ImageButton) rootView.findViewById(R.id.universal_btn);
         facebookImageButton = (ImageButton) rootView.findViewById(R.id.fb_btn);
@@ -100,6 +108,7 @@ public class PostNowFragmentHelper {
         twitterImageButton = (ImageButton) rootView.findViewById(R.id.twitter_btn);
         previewNowButton = (Button) rootView.findViewById(R.id.previewnow_btn);
         universalleftCharecterTextView = (TextView) rootView.findViewById(R.id.left_charecter_text);
+        addMediaLayoutButton = (LinearLayout) rootView.findViewById(R.id.add_media_btn);
     }
 
 }

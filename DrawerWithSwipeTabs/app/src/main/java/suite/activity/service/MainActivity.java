@@ -12,7 +12,6 @@ import com.androidbelieve.drawerwithswipetabs.R;
 import suite.activity.helper.NavigationBarServiceHelper;
 import suite.activity.helper.ToolBarServiceHelper;
 import suite.fragments.TabFragment;
-import suite.utils.ApplicationPreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,9 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        new ApplicationPreferenceManager(this);
+        setContentView(R.layout.activity_home);
 
         new ToolBarServiceHelper(this).setToolBar();
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@color/grey_green"
+    android:orientation="horizontal"
+    android:weightSum="2.005">
+
+    <LinearLayout
+        android:id="@+id/add_media_btn"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add Image/Video"
+            android:textColor="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/add_media"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/add_media_2"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/Divider_Horizontal"
+        android:layout_weight=".005"/>
+
+
+    <TextView
+        android:id="@+id/left_charecter_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="160 Charecter Left"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/white">
+    </TextView>
+
+</LinearLayout>

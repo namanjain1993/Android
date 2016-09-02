@@ -2,12 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.androidbelieve.drawerwithswipetabs">
 
-    <application android:name="suite.beans.GlobalVariables"
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name="commons.utils.GlobalVariables"
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name="suite.activity.service.WelcomeActivity"
             android:label="@string/app_name">
@@ -18,11 +23,26 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name="suite.activity.service.MainActivity"
             android:label="@string/app_name">
         </activity>
+
+        <activity
+            android:name="login.fragment.LoginFragment"
+            android:label="@string/login_activity_title">
+        </activity>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!-- Meta Data -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
 
     </application>
 
